@@ -1,0 +1,243 @@
+.location-map-container {
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Distance badge */
+.distance-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    color: white;
+}
+
+.distance-icon {
+    font-size: 1.25rem;
+}
+
+.distance-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.distance-label {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Map containers */
+.map-interactive {
+    border-radius: 0;
+}
+
+.map-static {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+}
+
+.map-static img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.map-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+    color: white;
+    text-align: center;
+}
+
+.map-overlay p {
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+/* Fallback (no API key) */
+.map-fallback {
+    padding: 2rem;
+}
+
+.coordinate-display {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+}
+
+.coord-icon {
+    font-size: 2.5rem;
+}
+
+.coord-info {
+    flex: 1;
+}
+
+.coord-label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin: 0 0 0.25rem 0;
+}
+
+.coord-value {
+    font-family: monospace;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 0.25rem 0;
+    color: var(--text-primary);
+}
+
+.coord-city {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* Placeholder */
+.map-placeholder {
+    padding: 3rem;
+    text-align: center;
+    color: var(--text-secondary);
+}
+
+.placeholder-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 0.5rem;
+    opacity: 0.5;
+}
+
+.map-placeholder p {
+    margin: 0;
+}
+
+/* Error */
+.map-error {
+    padding: 1rem;
+    background: #fee2e2;
+    color: #dc2626;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* Action buttons */
+.map-actions {
+    display: flex;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: white;
+    border-top: 1px solid var(--border-color);
+}
+
+.btn-directions,
+.btn-google,
+.btn-copy {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.btn-directions {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+}
+
+.btn-directions:hover {
+    background: var(--primary-dark);
+}
+
+.btn-google {
+    background: #4285f4;
+    color: white;
+    border: none;
+}
+
+.btn-google:hover {
+    background: #3367d6;
+}
+
+.btn-copy {
+    background: white;
+    color: var(--text-primary);
+    border: 2px solid var(--border-color);
+}
+
+.btn-copy:hover {
+    border-color: var(--primary-color);
+    background: var(--primary-light);
+}
+
+/* Legend */
+.map-legend {
+    display: flex;
+    gap: 1.5rem;
+    padding: 0.75rem 1rem;
+    background: #f8fafc;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.85rem;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.legend-marker {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.legend-marker.pet {
+    background: #ef4444;
+}
+
+.legend-marker.user {
+    background: #3b82f6;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .distance-badge {
+        flex-wrap: wrap;
+    }
+
+    .distance-value {
+        font-size: 1.25rem;
+    }
+
+    .map-actions {
+        flex-direction: column;
+    }
+
+    .map-legend {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}

@@ -1,0 +1,228 @@
+.location-filter {
+    background: white;
+    padding: 20px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+}
+
+.location-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.location-icon {
+    font-size: 20px;
+}
+
+.location-text {
+    flex: 1;
+    font-weight: 500;
+    color: var(--dark-color);
+}
+
+.location-text.status-loading {
+    color: var(--gray-color);
+}
+
+.location-text.status-none {
+    color: var(--danger-color);
+}
+
+.location-text.status-default {
+    color: #f59e0b;
+}
+
+.location-text.status-active {
+    color: #16a34a;
+}
+
+.location-actions {
+    display: flex;
+    gap: 4px;
+}
+
+.location-btn {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 6px 8px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.location-btn:hover:not(:disabled) {
+    background: var(--light-color);
+}
+
+.location-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.refresh-location:hover:not(:disabled) {
+    transform: rotate(180deg);
+}
+
+/* Current coordinates display */
+.current-coords {
+    margin-bottom: 12px;
+    padding-left: 28px;
+}
+
+.current-coords small {
+    color: var(--gray-color);
+    font-family: monospace;
+    font-size: 12px;
+}
+
+/* Manual input form */
+.manual-location-form {
+    background: var(--light-color);
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.manual-input-group {
+    display: flex;
+    gap: 8px;
+}
+
+.manual-input {
+    flex: 1;
+    padding: 10px 14px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.2s ease;
+}
+
+.manual-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.btn-set-location {
+    padding: 10px 20px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.btn-set-location:hover {
+    background: var(--primary-dark);
+}
+
+.input-error {
+    color: var(--danger-color);
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+.manual-input-tips {
+    margin-top: 10px;
+    color: var(--gray-color);
+}
+
+.manual-input-tips small {
+    font-size: 12px;
+}
+
+/* Error with action */
+.location-error {
+    color: var(--danger-color);
+    font-size: 13px;
+    margin-bottom: 12px;
+    padding: 10px 14px;
+    background-color: #fee2e2;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.error-action {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.error-action:hover {
+    text-decoration: underline;
+}
+
+.radius-selector {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.radius-selector label {
+    font-weight: 500;
+    color: var(--gray-color);
+}
+
+.radius-buttons {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.radius-btn {
+    padding: 8px 16px;
+    background: var(--light-color);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--dark-color);
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.radius-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.radius-btn.active {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+@media (max-width: 600px) {
+    .manual-input-group {
+        flex-direction: column;
+    }
+
+    .btn-set-location {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .radius-selector {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .radius-buttons {
+        justify-content: flex-start;
+    }
+}

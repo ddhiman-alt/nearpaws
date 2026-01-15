@@ -1,0 +1,242 @@
+.requests-page {
+    padding: 40px 0;
+    min-height: calc(100vh - 70px);
+}
+
+.requests-page h1 {
+    font-size: 1.75rem;
+    color: var(--dark-color);
+    margin-bottom: 24px;
+}
+
+.tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 24px;
+    background: white;
+    border-radius: var(--radius);
+    padding: 4px;
+    box-shadow: var(--shadow);
+}
+
+.tab {
+    flex: 1;
+    padding: 14px 24px;
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--gray-color);
+    border-radius: calc(var(--radius) - 2px);
+    transition: all 0.2s ease;
+}
+
+.tab:hover {
+    color: var(--dark-color);
+}
+
+.tab.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+.tab.active .tab-badge {
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+/* Tab Badge */
+.tab-badge {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 8px;
+    padding: 2px 8px;
+    background: #ef4444;
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 10px;
+}
+
+.tab-badge.pending {
+    background: #f59e0b;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 80px 20px;
+    background: white;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.empty-icon {
+    font-size: 64px;
+    margin-bottom: 16px;
+}
+
+.empty-state h2 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+    color: var(--dark-color);
+}
+
+.empty-state p {
+    color: var(--gray-color);
+    margin-bottom: 24px;
+}
+
+.requests-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.request-card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: var(--shadow);
+    display: grid;
+    grid-template-columns: 200px 1fr auto;
+    gap: 24px;
+    align-items: start;
+}
+
+.request-pet {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.pet-image {
+    width: 80px;
+    height: 80px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.pet-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pet-image .no-image {
+    width: 100%;
+    height: 100%;
+    background: var(--light-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+}
+
+.pet-name {
+    font-weight: 600;
+    color: var(--dark-color);
+    font-size: 1.1rem;
+}
+
+.pet-name:hover {
+    color: var(--primary-color);
+}
+
+.pet-details {
+    font-size: 13px;
+    color: var(--gray-color);
+    text-transform: capitalize;
+    margin-top: 4px;
+}
+
+.request-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.requester-info,
+.owner-info {
+    background: var(--light-color);
+    padding: 16px;
+    border-radius: var(--radius);
+}
+
+.requester-label,
+.owner-label {
+    font-size: 12px;
+    color: var(--gray-color);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.requester-name,
+.owner-name {
+    font-weight: 600;
+    color: var(--dark-color);
+    margin-bottom: 4px;
+}
+
+.requester-contact,
+.owner-contact {
+    font-size: 13px;
+    color: var(--gray-color);
+}
+
+.request-message {
+    padding: 16px;
+    background: #faf5ff;
+    border-radius: var(--radius);
+    border-left: 4px solid var(--primary-color);
+}
+
+.message-label {
+    font-size: 12px;
+    color: var(--gray-color);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.message-text {
+    color: var(--dark-color);
+    font-style: italic;
+    line-height: 1.6;
+}
+
+.request-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.request-date {
+    font-size: 13px;
+    color: var(--gray-color);
+}
+
+.request-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+@media (max-width: 768px) {
+    .request-card {
+        grid-template-columns: 1fr;
+    }
+
+    .request-pet {
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 16px;
+    }
+
+    .request-actions {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .request-actions .btn {
+        flex: 1;
+    }
+}
