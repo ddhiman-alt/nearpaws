@@ -12,6 +12,8 @@ WORKDIR /testbed
 
 RUN git clone https://github.com/ddhiman-alt/nearpaws.git .
 
-RUN npm ci
+RUN cd backend && npm ci
+
+RUN cd frontend && npm ci
 
 RUN chmod -R 777 /testbed
